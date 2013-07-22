@@ -8,8 +8,8 @@ from scrapy.contrib.downloadermiddleware.retry \
 
 class RetryRecordMiddleware(RetryMiddleware):
 
-    def __init__(self):
-        RetryMiddleware.__init__(self)
+    def __init__(self, settings):
+        RetryMiddleware.__init__(self, settings)
 
     def process_exception(self, request, exception, spider):
         to_return = RetryMiddleware.process_exception(
